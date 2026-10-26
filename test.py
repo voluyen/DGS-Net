@@ -26,16 +26,16 @@ def seed_torch(seed=1029):
 seed_torch(100)
 
 DetectionTests = {
-    'UniversalFakeDetect': { 'dataroot': '/home/HDD/yjz/dataset/UniversalFakeDetect',
+    'UniversalFakeDetect': { 'dataroot': os.environ.get('UFD_ROOT', '/home/HDD/yjz/dataset/UniversalFakeDetect'),
                              'no_resize': False, # Due to the different shapes of images in the dataset, resizing is required during batch detection.
                              'no_crop': True,
                            },
-    'Genimage': {'dataroot': '/home/HDD/yjz/dataset/Genimage',
+    'Genimage': {'dataroot': os.environ.get('GENIMAGE_ROOT', '/home/HDD/yjz/dataset/Genimage'),
             'no_resize': False,
             # Due to the different shapes of images in the dataset, resizing is required during batch detection.
             'no_crop': True,
             },
-    'AIGIBench': {'dataroot': '/home/HDD/yjz/dataset/AIGIBench/test',
+    'AIGIBench': {'dataroot': os.environ.get('AIGIBENCH_TEST_ROOT', '/home/HDD/yjz/dataset/AIGIBench/test'),
             'no_resize': False,
             # Due to the different shapes of images in the dataset, resizing is required during batch detection.
             'no_crop': True,
